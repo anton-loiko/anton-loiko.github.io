@@ -26,7 +26,7 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
-        - name: Set git config
+      - name: Set git config
         run: |
           git config --global user.email "metallist9656@gmail.com"
           git config --global user.name "Anton"
