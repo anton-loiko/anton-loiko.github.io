@@ -12,6 +12,18 @@ const config = {
 		}),
 		paths: {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message, referenceType, status }) => {
+				console.log(path, '<=== path ===');
+				console.log(referrer, '<=== referrer ===');
+				console.log(message, '<===  message ===');
+
+				console.log({ referenceType, status }, '<=== {referenceType,status} ===');
+
+				// otherwise fail the build
+				throw new Error(message);
+			}
 		}
 	},
 	preprocess: vitePreprocess()
