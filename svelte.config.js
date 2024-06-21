@@ -6,11 +6,7 @@ const config = {
 	kit: {
 		prerender: {
 			handleHttpError: ({ path, referrer, message, referenceType, status }) => {
-				console.log(path, '<=== path ===');
-				console.log(referrer, '<=== referrer ===');
-				console.log(message, '<===  message ===');
-
-				console.log({ referenceType, status }, '<=== {referenceType,status} ===');
+				console.log({ path, referrer, message, referenceType, status }, '<=== PROPS ===');
 
 				// otherwise fail the build
 				throw new Error(message);
