@@ -17,7 +17,7 @@
 	];
 </script>
 
-<footer class="area-footer flex justify-end items-center px-40 pb-14 gap-2">
+<footer class="area-footer flex justify-end items-center gap-2 px-4 py-6 xl:px-40 xl:pb-14 xl:pt-0">
 	{#each socialConfig as item (item.name)}
 		<a href={item.url} target="_blank" class="cursor-pointe">
 			<svelte:component this={item.icon} />

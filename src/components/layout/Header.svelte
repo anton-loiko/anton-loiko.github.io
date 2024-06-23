@@ -22,7 +22,7 @@
 	];
 </script>
 
-<header class="area-header flex justify-between items-center px-40 pt-14">
+<header class="area-header flex justify-between items-center px-4 py-6 xl:px-40 xl:pt-14 xl:pb-0">
 	<a href="{base}/" class="w-10 h-12 flex">
 		<img src={logo} alt="SvelteKit" />
 	</a>
