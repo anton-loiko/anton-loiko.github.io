@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import FileDownloadIcon from '$components/icons/FileDownload.svelte';
 	export let isIconOnly = false;
 	export let className = '';
@@ -9,7 +10,7 @@
 </script>
 
 <a
-	href="/resume.pdf"
+	href="{base}/resume.pdf"
 	download="Anton_Loiko_Resume.pdf"
 	class={isIconOnly ? baseClassName : baseClassName + buttonClassName}
 	title="Download my resume"
