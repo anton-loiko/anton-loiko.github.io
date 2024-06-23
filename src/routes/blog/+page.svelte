@@ -4,7 +4,6 @@
 
 <svelte:head>
 	<title>AL | Blog</title>
-	<meta name="description" content="Blog" />
 </svelte:head>
 
 <Container title="Blog">

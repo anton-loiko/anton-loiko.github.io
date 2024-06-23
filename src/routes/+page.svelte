@@ -4,7 +4,6 @@
 
 <svelte:head>
 	<title>AL | Home</title>
-	<meta name="description" content="Hello" />
 </svelte:head>
 
 <section class="h-full w-full">

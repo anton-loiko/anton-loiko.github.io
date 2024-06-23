@@ -5,7 +5,6 @@
 
 <svelte:head>
 	<title>AL | About</title>
-	<meta name="description" content="About me" />
 </svelte:head>
 
 <Container title="About me" className="overflow-x-hidden overflow-y-auto ">
