@@ -1,15 +1,15 @@
 <script>
-	import Header from './Header.svelte';
+	import Header from '$components/layout/Header.svelte';
+	import Footer from '$components/layout/Footer.svelte';
 	import '../app.css';
 </script>
 
-<div class="app">
+<div class="grid-custom-layout">
 	<Header />
 
-	<main>
+	<main class="area-main">
 		<slot />
 	</main>
-</div>
 
-<style>
-</style>
+	<Footer />
+</div>

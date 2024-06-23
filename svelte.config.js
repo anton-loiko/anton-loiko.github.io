@@ -1,9 +1,13 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
+		alias: {
+			$components: path.resolve('./src/components')
+		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message, referenceType, status }) => {
 				console.log({ path, referrer, message, referenceType, status }, '<=== PROPS ===');
