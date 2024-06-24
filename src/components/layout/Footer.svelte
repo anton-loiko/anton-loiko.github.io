@@ -5,7 +5,7 @@
 	const socialConfig = [
 		{
 			name: 'github',
-			url: 'https://github.com/dementeey',
+			url: 'https://github.com/anton-loiko',
 			className: 'w-5 h-5',
 			icon: GitHubIcon
 		},
