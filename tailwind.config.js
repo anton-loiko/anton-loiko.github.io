@@ -10,7 +10,8 @@ export default {
 				},
 
 				secondary: {
-					DEFAULT: '#1D082E'
+					DEFAULT: '#1D082E',
+					dark: '#0f0a17'
 				}
 			},
 			fontFamily: {
@@ -22,11 +23,13 @@ export default {
 		}
 	},
 	plugins: [
+		require('@tailwindcss/typography'),
+
 		function ({ addUtilities }) {
 			const newUtilities = {
 				'.grid-custom-layout': {
-					width: '100vw',
-					height: '100vh',
+					width: '100%',
+					minHeight: '100vh',
 					display: 'grid',
 					gridTemplateAreas: `
 					"h h h"
