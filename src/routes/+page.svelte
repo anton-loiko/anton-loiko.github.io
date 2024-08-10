@@ -1,5 +1,5 @@
 <script>
-	import DecorateDescription from '$components/ui/DecorateDescription.svelte';
+	import DecorateDescription from '$components/custom/DecorateDescription.svelte';
 </script>
 
 <svelte:head>
@@ -17,19 +17,16 @@
 		>
 			Hello
 
-			<DecorateDescription
-				className="!absolute -bottom-2 md:bottom-0 left-0"
-				description="Empowering UX through Front-End Magic"
-			/>
+			<DecorateDescription className="!absolute -bottom-2 md:bottom-0 left-0">
+				Empowering UI through Engineering Magic
+			</DecorateDescription>
 		</h1>
 	</div>
 
 	<div class="h-1 w-1 fixed z-10 left-2/4 bottom-1 -translate-x-2/4 -rotate-90">
-		<DecorateDescription className="before:!w-6 !absolute !pl-9" description="Anton Loiko" />
+		<DecorateDescription className="before:!w-6 !absolute !pl-9">Anton Loiko</DecorateDescription>
 	</div>
 </section>
-
-<!-- description="Design with purpose: where every pixel tells a story." -->
 
 <style>
 	.app-avatar-bg {

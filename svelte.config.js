@@ -1,16 +1,46 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+import { getHighlighter } from 'shiki';
+
+/** @type {import('mdsvex').MdsvexOptions} */
+const mdsvexOptions = {
+	extensions: ['.md'],
+	layout: {
+		_: './src/mdsvex.svelte'
+	},
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const highlighter = await getHighlighter({
+				themes: ['poimandres'],
+				langs: ['javascript', 'typescript', 'cpp', 'csharp', 'dockerfile']
+			});
+			await highlighter.loadLanguage('javascript', 'typescript');
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: 'poimandres' }));
+			return `{@html \`${html}\` }`;
+		}
+	},
+	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	rehypePlugins: [rehypeSlug]
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	extensions: ['.svelte', '.md'],
 	kit: {
 		alias: {
 			$components: path.resolve('./src/components')
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message, referenceType, status }) => {
-				console.log({ path, referrer, message, referenceType, status }, '<=== PROPS ===');
+				console.error(
+					{ path, referrer, message, referenceType, status },
+					'<=== handleHttpError ==='
+				);
 
 				// otherwise fail the build
 				throw new Error(message);
@@ -27,7 +57,7 @@ const config = {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		}
 	},
-	preprocess: vitePreprocess()
+	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)]
 };
 
 export default config;
