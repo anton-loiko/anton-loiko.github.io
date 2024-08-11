@@ -4,7 +4,7 @@
 	import type { Post } from '$lib/types';
 	import PostItem from './PostItem.svelte';
 
-	export let posts: Post[];
+	export let posts: Post[] = [];
 	export let fallbackPath: string = '';
 	export let fallbackLabel: string = '';
 

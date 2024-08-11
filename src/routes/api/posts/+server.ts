@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
-import type { Categories, Post } from '$lib/types';
+import type { Post } from '$lib/types';
 
+// TODO: If I add more posts, the category filter will need to be moved back to the server side.
 async function getPosts() {
 	let posts: Post[] = [];
 
