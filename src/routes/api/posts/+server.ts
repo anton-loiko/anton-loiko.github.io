@@ -1,9 +1,7 @@
 import { json } from '@sveltejs/kit';
 import type { Categories, Post } from '$lib/types';
 
-async function getPosts(filter?: Record<'category', string | null>) {
-	const category = filter?.category;
-
+async function getPosts() {
 	let posts: Post[] = [];
 
 	const paths = import.meta.glob('/src/posts/*.md', { eager: true });
@@ -23,25 +21,15 @@ async function getPosts(filter?: Record<'category', string | null>) {
 		(first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
 	);
 
-	if (category) {
-		posts = posts.filter((item) => item.categories.includes(category as Categories));
-	}
-
 	return posts;
 }
 
-export async function GET({ url }) {
-	let category: string | null = null;
-
+export async function GET() {
 	try {
-		category = url.searchParams.get('category');
+		const posts = await getPosts();
+
+		return json(posts);
 	} catch (error) {
-		// eslint-disable-next-line no-console
-		console.error(error, '<=== error ===');
+		return json([]);
 	}
-
-	const posts = await getPosts({ category });
-	console.log(posts, '<=== /api/posts/+server.ts -> posts ===');
-
-	return json(posts);
 }

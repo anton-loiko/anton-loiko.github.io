@@ -1,5 +1,5 @@
 import { dev } from '$app/environment';
-import type { Post } from '$lib/types';
+import type { Categories, Post } from '$lib/types';
 
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
@@ -10,11 +10,12 @@ export const csr = dev;
 export const prerender = true;
 
 export async function load({ fetch, params }) {
-	const response = await fetch(`/api/posts?category=${params.slug}`);
-	console.log(response, '<=== /routes/blog/categories/[slug]/+page.ts -> response ===');
+	const response = await fetch('/api/posts');
+	let posts: Post[] = await response.json();
 
-	const posts: Post[] = await response.json();
-	console.log(posts, '<=== /routes/blog/categories/[slug]/+page.ts  -> posts ===');
+	if (params.slug) {
+		posts = posts.filter((item) => item.categories.includes(params.slug as Categories));
+	}
 
 	return {
 		category: params.slug,

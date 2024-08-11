@@ -12,15 +12,14 @@ export const prerender = true;
 export async function load({ fetch }) {
 	try {
 		const response = await fetch('/api/posts');
-		console.log(response, '<=== /routes/blog/+page.ts -> response ===');
 
 		const posts: Post[] = await response.json();
-		console.log(posts, '<=== /routes/blog/+page.ts -> posts ===');
+		console.log(posts.length, '<=== /routes/blog/+page.ts -> posts ===');
 
 		return { posts };
 	} catch (error) {
 		console.error('error', error);
 
-		return { error };
+		return { status: 200, error, posts: [] };
 	}
 }

@@ -12,7 +12,6 @@
 	const handleClose = () => (isShow = false);
 
 	const handleSelect: MouseEventHandler<HTMLButtonElement> = (e) => {
-		console.log(e.currentTarget.dataset.value, '<=== e.currentTarget.dataset.value ===');
 		handleClose();
 	};
 

@@ -12,7 +12,6 @@ export const prerender = true;
 export async function load({ params }) {
 	try {
 		const post = await import(`../../../posts/${params.slug}.md`);
-		console.log(post, '<=== /routes/blog/[slug]/+page.ts -> post ===');
 
 		return {
 			content: post.default,
