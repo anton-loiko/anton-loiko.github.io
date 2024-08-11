@@ -41,6 +41,7 @@ export async function GET({ url }) {
 	}
 
 	const posts = await getPosts({ category });
+	console.log(posts, '<=== /api/posts/+server.ts -> posts ===');
 
 	return json(posts);
 }

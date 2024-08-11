@@ -11,7 +11,10 @@ export const prerender = true;
 
 export async function load({ fetch, params }) {
 	const response = await fetch(`/api/posts?category=${params.slug}`);
+	console.log(response, '<=== /routes/blog/categories/[slug]/+page.ts -> response ===');
+
 	const posts: Post[] = await response.json();
+	console.log(posts, '<=== /routes/blog/categories/[slug]/+page.ts  -> posts ===');
 
 	return {
 		category: params.slug,
