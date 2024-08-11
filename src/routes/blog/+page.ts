@@ -10,7 +10,14 @@ export const csr = dev;
 export const prerender = true;
 
 export async function load({ fetch }) {
-	const response = await fetch('/api/posts');
-	const posts: Post[] = await response.json();
-	return { posts };
+	try {
+		const response = await fetch('/api/posts');
+		const posts: Post[] = await response.json();
+
+		return { posts };
+	} catch (error) {
+		console.error('error', error);
+
+		return { error };
+	}
 }
