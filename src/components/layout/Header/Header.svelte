@@ -39,7 +39,7 @@
 			<HeaderNavItem {item} />
 		{/each}
 
-		// TODO: Create new logic "request-resume"
+		<!-- TODO: Create new logic "request-resume" -->
 		<!-- <DownloadResume isIconOnly={true} className="ml-1" /> -->
 	</nav>
 </header>

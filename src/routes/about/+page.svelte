@@ -8,8 +8,7 @@
 </svelte:head>
 
 <Container title="About me">
-	// TODO: Create new logic "request-resume"
-
+	<!-- TODO: Create new logic "request-resume" -->
 	<!-- <DownloadResume isIconOnly={false} className="mb-6" /> -->
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
