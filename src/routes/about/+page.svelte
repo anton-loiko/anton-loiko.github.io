@@ -8,7 +8,8 @@
 </svelte:head>
 
 <Container title="About me">
-	<DownloadResume isIconOnly={false} className="mb-6" />
+	<!-- TODO: Create new logic "request-resume" -->
+	<!-- <DownloadResume isIconOnly={false} className="mb-6" /> -->
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
 		As a Senior Frontend Engineer and Fullstack Developer, I bring over 6 years of experience in
