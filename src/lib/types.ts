@@ -1,5 +1,6 @@
 export enum CategoriesEnum {
-	'updates' = 'my_updates'
+	'updates' = 'my_updates',
+	'updates12' = 'my_updates12'
 }
 
 export type Categories = keyof typeof CategoriesEnum;

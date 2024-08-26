@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { CategoriesEnum, type Categories } from '$lib/types';
 	import Container from '$components/layout/Container.svelte';
 	import CategoryList from '$components/shared/Category/CategoryList.svelte';
+	import { getCategories } from '$lib/utils';
 
-	const categories: Categories[] = Object.values(CategoriesEnum);
+	const categories = getCategories();
 </script>
 
 <svelte:head>
