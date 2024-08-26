@@ -13,5 +13,5 @@
 		<h1 class="text-4xl font-lilita mb-4">{title}</h1>
 	{/if}
 
-	<slot></slot>
+	<slot />
 </svelte:element>
