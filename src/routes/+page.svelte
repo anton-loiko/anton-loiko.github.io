@@ -1,5 +1,5 @@
 <script>
-	import DecorateDescription from '$components/custom/DecorateDescription.svelte';
+	import DecorateDescription from '$components/shared/DecorateDescription.svelte';
 </script>
 
 <svelte:head>

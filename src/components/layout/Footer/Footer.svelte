@@ -1,7 +1,7 @@
 <script lang="ts">
 	import GitHubIcon from '$components/icons/GitHub.svelte';
 	import LinkedinIcon from '$components/icons/Linkedin.svelte';
-	import ThemeSwitcher from '$components/custom/ThemeSwitcher.svelte';
+	import ThemeSwitcher from '$components/shared/ThemeSwitcher.svelte';
 	import FooterItem from './FooterItem.svelte';
 	import { page } from '$app/stores';
 	import type { FooterLinksConfig } from '$lib/types';

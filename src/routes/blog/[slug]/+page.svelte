@@ -1,5 +1,5 @@
 <script>
-	import CategoryList from '$components/custom/Category/CategoryList.svelte';
+	import CategoryList from '$components/shared/Category/CategoryList.svelte';
 	import Container from '$components/layout/Container.svelte';
 	import { formatDate } from '$lib/utils';
 

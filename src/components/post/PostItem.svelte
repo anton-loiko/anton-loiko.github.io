@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import DecorateDescription from '$components/custom/DecorateDescription.svelte';
+	import DecorateDescription from '$components/shared/DecorateDescription.svelte';
 	import RightIcon from '$components/icons/Right.svelte';
 	import type { Post } from '$lib/types';
 	import { formatDate } from '$lib/utils';
