@@ -3,8 +3,8 @@
 	import MoonIcon from '$components/icons/Moon.svelte';
 	import ComputerIcon from '$components/icons/Computer.svelte';
 	import BrightnessIcon from '$components/icons/Brightness.svelte';
+	import OutSideClick from '$components/shared/OutSideClick.svelte';
 	import type { MouseEventHandler } from 'svelte/elements';
-	import OutSideClick from './OutSideClick.svelte';
 
 	let isShow = false;
 

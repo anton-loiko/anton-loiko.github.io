@@ -1,5 +1,5 @@
 <script>
-	import Container from '$components/layout/Container.svelte';
+	import Container from '$components/shared/Container.svelte';
 	import DownloadResume from '$components/DownloadResume.svelte';
 </script>
 

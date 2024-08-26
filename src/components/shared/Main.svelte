@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Breadcrumbs from '$components/shared/Breadcrumbs.svelte';
+	import Breadcrumbs from './Breadcrumbs.svelte';
 
 	const ignorePaths = ['/', '/blog', '/about'];
 </script>

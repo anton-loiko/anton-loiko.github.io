@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Img from '$components/shared/Img.svelte';
 	import type { FooterLinksConfig } from '$lib/types';
 
 	export let item: FooterLinksConfig;
@@ -16,7 +17,7 @@
 			{#if item.icon}
 				<svelte:component this={item.icon} />
 			{:else if item.img}
-				<img src={item.img} alt={item.alt} />
+				<Img src={item.img} alt={item.alt} />
 			{/if}
 		</svelte:element>
 	</li>

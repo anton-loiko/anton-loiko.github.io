@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
-	import Container from '$components/layout/Container.svelte';
+	import Container from '$components/shared/Container.svelte';
 </script>
 
 <Container className="text-center">

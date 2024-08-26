@@ -1,6 +1,6 @@
 <script>
 	import CategoryList from '$components/shared/Category/CategoryList.svelte';
-	import Container from '$components/layout/Container.svelte';
+	import Container from '$components/shared/Container.svelte';
 	import { formatDate } from '$lib/utils';
 
 	export let data;

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
-	import Container from '$components/layout/Container.svelte';
 	import RightIcon from '$components/icons/Right.svelte';
+	import Container from './Container.svelte';
 
 	const getBreadcrumbs = (pathname: string) => {
 		return pathname.split('/').map((breadcrumb, index, arr) => ({
