@@ -1,20 +1,26 @@
 <script>
 	import { page } from '$app/stores';
+	import cls from 'classnames';
 
-	import Header from '$components/shared/Header/Header.svelte';
-	import Footer from '$components/shared/Footer/Footer.svelte';
+	import Header from '$components/layouts/Header/Header.svelte';
+	import Footer from '$components/layouts/Footer/Footer.svelte';
 	import Main from '$components/shared/Main.svelte';
 	import '../../app.css';
+
+	const containerClassName = 'xl:container xl:mx-auto xl:!px-0';
 </script>
 
 <div
-	class={`grid-custom-layout text-primary ${$page.url.pathname === '/' ? 'bg-secondary' : 'bg-secondary-dark'}`}
+	class={cls(
+		'grid-custom-layout text-primary',
+		$page.url.pathname === '/' ? 'bg-gray-200' : 'bg-secondary-dark'
+	)}
 >
-	<Header />
+	<Header className={containerClassName} />
 
-	<Main>
+	<Main className={containerClassName}>
 		<slot />
 	</Main>
 
-	<Footer />
+	<Footer className={containerClassName} />
 </div>

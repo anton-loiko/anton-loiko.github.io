@@ -1,9 +1,31 @@
 export enum CategoriesEnum {
-	'updates' = 'my_updates',
-	'updates12' = 'my_updates12'
+	'UPDATES' = 'UPDATES'
+}
+export enum WorkbenchTagsEnum {
+	'INDEPENDENT' = 'INDEPENDENT',
+	'COMMERCIAL' = 'COMMERCIAL',
+	'WEB' = 'WEB',
+	'2D_GAME' = '2D_GAME',
+	'3D_GAME' = '3D_GAME'
 }
 
 export type Categories = keyof typeof CategoriesEnum;
+
+export type WorkbenchTags = keyof typeof WorkbenchTagsEnum;
+
+export type TagSize = 'xs' | 'sm';
+export type TagVariant = 'default' | 'light';
+
+type Image = [string, string];
+
+export type CardProps = {
+	title: string;
+	description: string;
+	path: string;
+
+	img?: Image;
+	tags?: WorkbenchTags[];
+};
 
 export type Post = {
 	title: string;
@@ -12,6 +34,22 @@ export type Post = {
 	date: string;
 	categories: Categories[];
 	published: boolean;
+};
+
+export type WorkbenchMetadata = {
+	title: string;
+	slug: string;
+	description: string;
+	date: string;
+	tags: WorkbenchTags[];
+	published: boolean;
+
+	img?: Image;
+};
+
+export type Workbench = {
+	content: any;
+	meta: WorkbenchMetadata;
 };
 
 export type NavigationConfig = {
@@ -35,4 +73,19 @@ export type FooterLinksConfig = {
 	alt?: string;
 	hide?: boolean;
 	hideOnHome?: boolean;
+};
+
+export type HeroIconVariant = 'gamepad' | 'terminal' | 'battery';
+
+export type HeroTitleOptions = {
+	tag: string;
+	attrs?: {
+		class?: string;
+		iconProps?: {
+			variant: HeroIconVariant;
+			className?: string;
+		};
+	};
+	children?: string | HeroTitleOptions[];
+	icon?: any;
 };

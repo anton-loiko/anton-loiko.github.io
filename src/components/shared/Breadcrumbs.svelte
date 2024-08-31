@@ -3,6 +3,7 @@
 	import { base } from '$app/paths';
 	import RightIcon from '$components/icons/Right.svelte';
 	import Container from './Container.svelte';
+	import { getBasePath } from '$lib/utils';
 
 	const getBreadcrumbs = (pathname: string) => {
 		return pathname.split('/').map((breadcrumb, index, arr) => ({
@@ -10,7 +11,7 @@
 				breadcrumb === ''
 					? '/'
 					: arr.slice(0, index + 1).reduce((prev, current) => prev + '/' + current),
-			breadcrumb: breadcrumb === '' ? '🥑' : breadcrumb.replaceAll('-', ' '),
+			breadcrumb: breadcrumb === '' ? '🏠' : breadcrumb.replaceAll('-', ' '),
 			isHome: breadcrumb === ''
 		}));
 	};
@@ -27,8 +28,8 @@
 
 			<li class="font-lilita uppercase hover:text-white flex-shrink-0">
 				<a
-					href="{base}{item.href}"
-					class={`block min-w-5 min-h-5 py-1 ${$page.url.pathname === item.href ? 'pointer-events-none text-primary-dark' : ''}`}
+					href={getBasePath(item.href)}
+					class={`block min-w-5 min-h-5 py-1 ${$page.url.pathname === item.href ? 'pointer-events-none text-primary-dark focus:outline-none' : ''}`}
 				>
 					{item.breadcrumb}
 				</a>

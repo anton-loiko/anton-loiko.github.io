@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import type { NavigationConfig } from '$lib/types';
+	import { getBasePath } from '$lib/utils';
 	import cls from 'classnames';
 
 	export let className = '';
@@ -20,7 +20,7 @@
 				},
 				className
 			)}
-			href="{base}{item.pathname}"
+			href={getBasePath(item.pathname)}
 		>
 			<span
 				class={cls({

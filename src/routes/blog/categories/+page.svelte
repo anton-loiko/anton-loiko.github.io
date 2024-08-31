@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Container from '$components/shared/Container.svelte';
-	import CategoryList from '$components/shared/Category/CategoryList.svelte';
+	import Categories from '$components/shared/Category/Categories.svelte';
 	import { getCategories } from '$lib/utils';
 
 	const categories = getCategories();
@@ -11,5 +11,5 @@
 </svelte:head>
 
 <Container title="Categories">
-	<CategoryList classes={{ category: 'text-2xl' }} {categories} />
+	<Categories classes={{ category: 'text-2xl' }} {categories} />
 </Container>

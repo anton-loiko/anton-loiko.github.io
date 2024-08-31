@@ -1,13 +1,16 @@
 <script lang="ts">
+	import cls from 'classnames';
 	import { page } from '$app/stores';
 	import Breadcrumbs from './Breadcrumbs.svelte';
 
-	const ignorePaths = ['/', '/blog', '/about'];
+	export let className: string = '';
+
+	const ignorePaths = ['/', '/blog', '/workbench'];
 </script>
 
-<main class="area-main">
+<main class={cls('area-main', className)}>
 	{#if !ignorePaths.includes($page.url?.pathname ?? '')}
-		<Breadcrumbs className="mb-10 py-3 sm:py-0" />
+		<Breadcrumbs className={cls('mb-10 py-3 ', 'sm:py-0')} />
 	{/if}
 
 	<slot />

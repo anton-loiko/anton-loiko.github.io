@@ -1,15 +1,10 @@
-<script>
-	import Container from '$components/shared/Container.svelte';
-	import DownloadResume from '$components/DownloadResume.svelte';
+<script lang="ts">
+	export let anchorRef: HTMLElement | null = null;
 </script>
 
-<svelte:head>
-	<title>AL | About me</title>
-</svelte:head>
-
-<Container title="About me">
-	<!-- TODO: Create new logic "request-resume" -->
-	<!-- <DownloadResume isIconOnly={false} className="mb-6" /> -->
+<div class="pt-20 pb-32">
+	<h4 bind:this={anchorRef} class="text-center text-xl text-principal-red mb-3">A Little</h4>
+	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About me</h2>
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
 		As a Senior Frontend Engineer and Fullstack Developer, I bring over 6 years of experience in
@@ -30,4 +25,4 @@
 		you're looking for someone who is not only technically adept but also passionate about creating
 		exceptional user experiences.
 	</p>
-</Container>
+</div>

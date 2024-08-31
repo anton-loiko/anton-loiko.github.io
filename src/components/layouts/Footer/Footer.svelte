@@ -8,6 +8,8 @@
 	import FooterCopyRight from './FooterCopyRight.svelte';
 	import cls from 'classnames';
 
+	export let className = '';
+
 	const items: FooterLinksConfig[] = [
 		{
 			// Unlock in future features,
@@ -45,8 +47,10 @@
 
 <footer
 	class={cls(
-		'area-footer grid grid-cols-none grid-flow-col items-start  sm:items-center gap-4 px-4 py-6 xl:px-40 xl:pb-14 xl:pt-0',
-		$page.url.pathname === '/' ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
+		'area-footer grid grid-cols-none grid-flow-col items-start  sm:items-center gap-4 px-4 py-6 ',
+		'xl:px-40 xl:pb-14 xl:pt-0',
+		$page.url.pathname === '/' ? 'sm:grid-cols-2' : 'sm:grid-cols-3',
+		className
 	)}
 >
 	<div class="flex flex-col gap-2 sm:block">

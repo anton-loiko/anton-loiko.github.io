@@ -27,3 +27,9 @@
 	/* font-display: swap; */
 	src: url('/fonts/Lilita_One/LilitaOne-Regular.ttf') format('truetype');
 }
+
+*:focus {
+	outline-color: #b17c11;
+	outline-style: dashed;
+	outline-offset: 2px;
+}

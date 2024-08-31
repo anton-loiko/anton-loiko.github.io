@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { Categories } from '$lib/types';
 
-	export let category: Categories;
+	export let category: string;
 	export let className: string = '';
 </script>
 
