@@ -61,6 +61,7 @@ export type NavigationConfig = {
 	hideOnHome?: boolean;
 	showOnParentPage?: boolean;
 	children?: Omit<NavigationConfig, 'children'>[];
+	onClick?: (e: MouseEvent) => void;
 };
 
 export type FooterLinksConfig = {

@@ -66,7 +66,8 @@ const config = {
 	kit: {
 		alias: {
 			$components: path.resolve('./src/components'),
-			$hooks: path.resolve('./src/hooks')
+			$hooks: path.resolve('./src/hooks'),
+			$stores: path.resolve('./src/stores')
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message, referenceType, status }) => {

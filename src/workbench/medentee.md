@@ -4,7 +4,7 @@ description: Mid-Senior Software Engineer | Front-end at Medentee Limited
 # Date format: 'yyyy-m-dd'
 date: '2024-8-29'
 img:
-  - /images/medentee.png
+  - /images/thumbnails/medentee.jpg
   - medentee
 tags:
   - WEB
@@ -16,7 +16,7 @@ published: true
 
 [Website](https://medentee.com)
 
-![Medentee](/images/medentee.png)
+![Medentee](/images/medentee.jpg)
 
 **Feb. 2021 - May 2024 | London, England · Remote**
 

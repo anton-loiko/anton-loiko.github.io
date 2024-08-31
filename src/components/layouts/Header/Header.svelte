@@ -5,6 +5,23 @@
 	import type { NavigationConfig } from '$lib/types';
 	import HeaderNavItem from './HeaderNavItem.svelte';
 	import Img from '$components/shared/Img.svelte';
+	import { aboutAnchorRef } from '$stores/globalStore';
+
+	let anchor: HTMLElement | null = null;
+
+	$: anchor = $aboutAnchorRef;
+
+	const handleAboutClick = (e: MouseEvent) => {
+		if (anchor) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			anchor.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	};
 
 	export let className: string = '';
 
@@ -32,7 +49,8 @@
 		},
 		{
 			name: 'about',
-			pathname: '/about'
+			pathname: '/#about',
+			onClick: handleAboutClick
 		}
 	];
 </script>

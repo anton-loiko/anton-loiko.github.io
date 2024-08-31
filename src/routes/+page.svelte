@@ -4,11 +4,11 @@
 
 	import About from '$components/specific/About.svelte';
 	import Hero from '$components/specific/Hero/Hero.svelte';
+	import Skills from '$components/specific/Skils/Skills.svelte';
 
 	export let data;
 
 	let anchorRef: HTMLDivElement | null = null;
-	let aboutAnchorRef: HTMLDivElement | null = null;
 </script>
 
 <svelte:head>
@@ -28,6 +28,8 @@
 	</div>
 
 	<div class="mx-auto mb-36 max-w-5xl px-4">
-		<About anchorRef={aboutAnchorRef} />
+		<About />
+
+		<Skills />
 	</div>
 </section>

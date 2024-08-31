@@ -21,6 +21,7 @@
 				className
 			)}
 			href={getBasePath(item.pathname)}
+			on:click={item.onClick}
 		>
 			<span
 				class={cls({

@@ -1,9 +1,18 @@
 <script lang="ts">
-	export let anchorRef: HTMLElement | null = null;
+	import { aboutAnchorRef } from '$stores/globalStore';
+	import { onDestroy } from 'svelte';
+
+	let localRef: HTMLElement | null = null;
+
+	$: aboutAnchorRef.set(localRef);
+
+	onDestroy(() => {
+		aboutAnchorRef.set(null);
+	});
 </script>
 
-<div class="pt-20 pb-32">
-	<h4 bind:this={anchorRef} class="text-center text-xl text-principal-red mb-3">A Little</h4>
+<div bind:this={localRef} id="about" class="pt-20 pb-32">
+	<h4 class="text-center text-xl text-principal-red mb-3">A Little</h4>
 	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About me</h2>
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">

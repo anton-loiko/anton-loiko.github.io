@@ -4,7 +4,7 @@ description: The project provided a solid foundation in character setup, collisi
 # Date format: 'yyyy-m-dd'
 date: '2024-8-31'
 img:
-  - /images/first_2d_game.jpg
+  - /images/thumbnails/first_2d_game.jpg
   - first_2d_game
 tags:
   - 2D_GAME

@@ -4,7 +4,7 @@ description: Latest news on my projects and professional growth. Made with Svelt
 # Date format: 'yyyy-m-dd'
 date: '2024-8-30'
 img:
-  - /images/workbench-project.jpg
+  - /images/thumbnails/workbench-project.jpg
   - workbench-project
 tags:
   - WEB

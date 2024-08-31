@@ -2,10 +2,6 @@
 	export let src = '';
 </script>
 
-<svelte:head>
-	<script src="https://player.vimeo.com/api/player.js"></script>
-</svelte:head>
-
 <iframe
 	title="vimeo-player"
 	src="https://player.vimeo.com/video/{src}"
