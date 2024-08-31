@@ -1,12 +1,11 @@
 <script lang="ts">
-	import GitHubIcon from '$components/icons/GitHub.svelte';
-	import LinkedinIcon from '$components/icons/Linkedin.svelte';
 	import ThemeSwitcher from '$components/specific/ThemeSwitcher.svelte';
 	import FooterItem from './FooterItem.svelte';
 	import { page } from '$app/stores';
 	import type { FooterLinksConfig } from '$lib/types';
 	import FooterCopyRight from './FooterCopyRight.svelte';
 	import cls from 'classnames';
+	import { SOCIAL_LINKS_MAP } from '$lib/constants';
 
 	export let className = '';
 
@@ -30,18 +29,12 @@
 		}
 	];
 
-	const socialConfig: FooterLinksConfig[] = [
+	export const socialConfig = [
 		{
-			name: 'github',
-			url: 'https://github.com/anton-loiko',
-			className: 'w-5 h-5',
-			icon: GitHubIcon
+			...SOCIAL_LINKS_MAP.get('github')!,
+			className: 'w-5 h-5'
 		},
-		{
-			name: 'linkedin',
-			url: 'https://www.linkedin.com/in/antonloiko',
-			icon: LinkedinIcon
-		}
+		SOCIAL_LINKS_MAP.get('linkedin')!
 	];
 </script>
 

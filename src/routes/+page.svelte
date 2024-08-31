@@ -5,6 +5,7 @@
 	import About from '$components/specific/About.svelte';
 	import Hero from '$components/specific/Hero/Hero.svelte';
 	import Skills from '$components/specific/Skils/Skills.svelte';
+	import Contacts from '$components/specific/Contacts/Contacts.svelte';
 
 	export let data;
 
@@ -32,4 +33,6 @@
 
 		<Skills />
 	</div>
+
+	<Contacts />
 </section>

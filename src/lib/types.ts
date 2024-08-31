@@ -64,11 +64,17 @@ export type NavigationConfig = {
 	onClick?: (e: MouseEvent) => void;
 };
 
-export type FooterLinksConfig = {
-	name: string;
-	url: string | null;
+export type SocialLinksName = 'github' | 'linkedin' | 'email';
 
+export type SocialLinks = {
+	name: SocialLinksName;
+	url: string | null;
 	icon?: any;
+};
+
+export type FooterLinksConfig = Pick<SocialLinks, 'icon' | 'url'> & {
+	name: string;
+
 	className?: string;
 	img?: string;
 	alt?: string;
