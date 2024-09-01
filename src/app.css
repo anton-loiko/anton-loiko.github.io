@@ -33,3 +33,13 @@
 	outline-style: dashed;
 	outline-offset: 2px;
 }
+
+:root {
+	--vh: 100vh;
+}
+
+@media (orientation: portrait) {
+	:root {
+		--vh: 100dvh;
+	}
+}

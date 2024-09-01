@@ -1,30 +1,16 @@
-import { writable } from 'svelte/store';
+type LocalRef = HTMLElement | string | null;
 
 export function useScrollToAnchor() {
-	const anchor = writable<HTMLElement | null>(null);
+	const scrollToAnchor = (anchorRef: LocalRef) => {
+		const element = typeof anchorRef === 'string' ? document.querySelector(anchorRef) : anchorRef;
 
-	function getElement(): HTMLElement | null {
-		let value: HTMLElement | null = null;
+		if (element) {
+			element.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	};
 
-		const unsubscribe = anchor.subscribe((v) => (value = v));
-		unsubscribe();
-		return value;
-	}
-
-	const scrollToAnchor =
-		(anchorRef: HTMLElement | string | null = null) =>
-		() => {
-			anchor.set(typeof anchorRef === 'string' ? document.querySelector(anchorRef) : anchorRef);
-
-			const element = getElement();
-
-			if (element) {
-				element.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
-			}
-		};
-
-	return { anchor, scrollToAnchor };
+	return { scrollToAnchor };
 }

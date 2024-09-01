@@ -32,7 +32,7 @@
 			'lg:max-h-48 lg:min-h-20'
 		)}
 	>
-		<Img className="w-full h-auto object-cover" {src} {alt} />
+		<Img className="w-full h-auto object-cover rounded-md" {src} {alt} />
 	</div>
 
 	<div class="flex flex-col gap-2">

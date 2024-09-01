@@ -5,32 +5,23 @@
 	import type { NavigationConfig } from '$lib/types';
 	import HeaderNavItem from './HeaderNavItem.svelte';
 	import Img from '$components/shared/Img.svelte';
-	import { aboutAnchorRef } from '$stores/globalStore';
+	import { aboutAnchorRef } from '$stores/global/refs';
+	import { useScrollToAnchor } from '$hooks/useScrollToAnchor';
 
-	let anchor: HTMLElement | null = null;
-
-	$: anchor = $aboutAnchorRef;
+	const { scrollToAnchor } = useScrollToAnchor();
 
 	const handleAboutClick = (e: MouseEvent) => {
-		if (anchor) {
+		if ($aboutAnchorRef) {
 			e.preventDefault();
 			e.stopPropagation();
 
-			anchor.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			});
+			scrollToAnchor($aboutAnchorRef);
 		}
 	};
 
 	export let className: string = '';
 
 	const navigationConfig: NavigationConfig[] = [
-		{
-			selfHide: true,
-			name: 'home',
-			pathname: '/'
-		},
 		{
 			name: 'workbench',
 			pathname: '/workbench',

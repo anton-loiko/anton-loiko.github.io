@@ -3,9 +3,11 @@
 	import { gsap } from 'gsap';
 	import CaretDoubleDown from '$components/icons/CaretDoubleDown.svelte';
 	import { useScrollToAnchor } from '$hooks/useScrollToAnchor';
+	import { workbenchAnchorRef } from '$stores/global/refs';
 
-	export let anchorRef: HTMLElement | null = null;
 	export let className: string = '';
+
+	const { scrollToAnchor } = useScrollToAnchor();
 
 	let animationRef: HTMLElement | null = null;
 
@@ -21,9 +23,9 @@
 		}
 	});
 
-	const { scrollToAnchor } = useScrollToAnchor();
+	const handleClick = () => scrollToAnchor($workbenchAnchorRef);
 </script>
 
-<button bind:this={animationRef} class={className} on:click={scrollToAnchor(anchorRef)}>
+<button bind:this={animationRef} class={className} on:click={handleClick}>
 	<CaretDoubleDown className="text-primary w-8 h-8" />
 </button>

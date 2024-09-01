@@ -16,6 +16,7 @@
 </script>
 
 <button
+	tabindex={onClick ? null : -1}
 	type="button"
 	class={cls(
 		'inline-flex justify-center font-roboto py-1 bg-gray-300 rounded-full',

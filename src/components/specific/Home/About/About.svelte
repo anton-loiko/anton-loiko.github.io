@@ -1,6 +1,9 @@
 <script lang="ts">
-	import { aboutAnchorRef } from '$stores/globalStore';
+	import cls from 'classnames';
 	import { onDestroy } from 'svelte';
+	import { aboutAnchorRef } from '$stores/global/refs';
+
+	export let className: string = '';
 
 	let localRef: HTMLElement | null = null;
 
@@ -11,7 +14,7 @@
 	});
 </script>
 
-<div bind:this={localRef} id="about" class="pt-20 pb-32">
+<div bind:this={localRef} id="about" class={cls('pt-4', className)}>
 	<h4 class="text-center text-xl text-principal-red mb-3">A Little</h4>
 	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About me</h2>
 

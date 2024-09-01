@@ -5,6 +5,18 @@
 	import type { HeroTitleOptions } from '$lib/types';
 	import HeroScrollButton from './HeroScrollButton.svelte';
 	import HeroIcon from './HeroIcon.svelte';
+	import { onMount } from 'svelte';
+
+	function setVh() {
+		document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+	}
+
+	onMount(() => {
+		setVh();
+		window.addEventListener('resize', setVh);
+
+		return () => window.removeEventListener('resize', setVh);
+	});
 
 	const defaultSubtitle: HeroTitleOptions = {
 		tag: 'span',
@@ -16,8 +28,9 @@
 		]
 	};
 
+	const divider = { tag: 'span', children: '|', attrs: { class: 'hidden xl:inline' } };
 	const iconWrapper = 'flex items-center gap-2';
-	const iconSize = 'w-12 h-12';
+	const iconSize = cls('w-9 h-9', 'xl:w-12 xl:h-12');
 	const defaultTitle: HeroTitleOptions = {
 		tag: 'span',
 		children: [
@@ -30,18 +43,17 @@
 					iconProps: { variant: 'terminal', className: cls('text-principal-purple', iconSize) }
 				}
 			},
-			{ tag: 'span', children: '|' },
+			divider,
 			{
 				tag: 'div',
 				icon: HeroIcon,
 				children: 'Pragmatic',
 				attrs: {
-					class: iconWrapper,
+					class: cls(iconWrapper, 'order-3', 'xl:order-none'),
 					iconProps: { variant: 'battery', className: cls('text-principal-green', iconSize) }
 				}
 			},
-
-			{ tag: 'span', children: '|' },
+			divider,
 			{
 				tag: 'div',
 				icon: HeroIcon,
@@ -52,14 +64,13 @@
 				}
 			}
 		],
-		attrs: { class: 'flex items-center gap-1' }
+		attrs: { class: cls('flex flex-col items-start gap-1', 'xl:flex-row xl:items-center') }
 	};
 
 	const defaultDescription =
 		'UI development is my forte, and I love the creative process of blending technology and design to build engaging interfaces.';
 	const defaultAvatar = '/images/avatar.jpeg';
 
-	export let anchorRef: HTMLDivElement | null;
 	export let subtitle: HeroTitleOptions = defaultSubtitle;
 	export let title: HeroTitleOptions = defaultTitle;
 	export let description: string = defaultDescription;
@@ -71,8 +82,8 @@
 
 <div
 	class={cls(
-		'root relative flex flex-col bg-no-repeat bg-contain bg-center pt-48',
-		'xl:bg-cover',
+		'root relative flex flex-col bg-no-repeat bg-contain bg-top pt-12',
+		'xl:bg-center xl:pt-48 xl:bg-cover',
 		classes?.root
 	)}
 >
@@ -80,8 +91,8 @@
 		{#if avatar}
 			<Img
 				className={cls(
-					'rounded-full border-2 p-1 border-principal-red w-16 h-16 object-cover mb-14',
-					'sm:w-28 sm:h-28',
+					'rounded-full border-2 p-1 border-principal-red !w-24 !h-24 object-cover mb-14',
+					'sm:!w-28 sm:!h-28',
 					classes?.avatar
 				)}
 				src={avatar}
@@ -92,26 +103,36 @@
 		<HeroTitle
 			tag="h4"
 			title={subtitle}
-			className={cls('text-xl text-gray-500 mb-3', classes.subtitle)}
+			className={cls('text-sm text-gray-500 mb-5', 'md:mb-3 sm:text-xl', classes.subtitle)}
 		/>
 
 		<HeroTitle
 			tag="h1"
 			{title}
-			className={cls('text-4xl text-gray-600 font-lilita mb-5', classes.title)}
+			className={cls(
+				'text-2xl text-gray-600 font-lilita mb-8',
+				'sm:mb-5 sm:text-3xl md:text-4xl',
+				classes.title
+			)}
 		/>
 
-		<p class={cls('text-gray-400', classes.description)}>{description}</p>
+		<p class={cls('text-gray-400 px-4 text-center', classes.description)}>{description}</p>
 
-		<HeroScrollButton className="absolute bottom-5 p1 m0" {anchorRef} />
+		<HeroScrollButton className={cls('absolute p1 m0 bottom-5')} />
 	</div>
 </div>
 
 <style>
 	.root {
 		min-height: 450px;
-		height: calc(100vh - 88px);
-		max-height: 750px;
+		height: calc(calc(var(--vh, 1vh) * 100) - 88px);
 		background-image: url('/images/bg-hero.jpg');
+		/* max-height: 600px; */
+	}
+
+	@media (min-width: 768px) {
+		.root {
+			max-height: 750px;
+		}
 	}
 </style>

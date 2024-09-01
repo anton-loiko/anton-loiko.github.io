@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SkillsItem from './SkillsItem.svelte';
 
+	export let className: string = '';
+
 	const skills = [
 		{
 			url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
@@ -210,11 +212,13 @@
 	];
 </script>
 
-<h4 class="text-center text-xl text-principal-red mb-3">A bit</h4>
-<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About skills</h2>
+<section class={className}>
+	<h4 class="text-center text-xl text-principal-red mb-3">A bit</h4>
+	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About skills</h2>
 
-<div class="flex justify-start flex-wrap items-center gap-3">
-	{#each skills as skill}
-		<SkillsItem {...skill} />
-	{/each}
-</div>
+	<div class="flex justify-start flex-wrap items-center gap-3">
+		{#each skills as skill}
+			<SkillsItem {...skill} />
+		{/each}
+	</div>
+</section>

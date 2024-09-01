@@ -22,5 +22,5 @@
 		<slot />
 	</Main>
 
-	<Footer className={containerClassName} />
+	<Footer className={cls({ hidden: $page.url.pathname === '/' }, containerClassName)} />
 </div>
