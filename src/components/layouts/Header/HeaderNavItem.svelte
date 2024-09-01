@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { NavigationConfig } from '$lib/types';
-	import { getBasePath } from '$lib/utils';
+	import { createPath } from '$lib/utils';
 	import cls from 'classnames';
 
 	export let className = '';
@@ -20,7 +20,7 @@
 				},
 				className
 			)}
-			href={getBasePath(item.pathname)}
+			href={createPath(item.pathname)}
 			on:click={item.onClick}
 		>
 			<span

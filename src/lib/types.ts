@@ -21,7 +21,7 @@ type Image = [string, string];
 export type CardProps = {
 	title: string;
 	description: string;
-	path: string;
+	slug: string;
 
 	img?: Image;
 	tags?: WorkbenchTags[];

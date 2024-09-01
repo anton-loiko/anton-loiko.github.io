@@ -1,10 +1,4 @@
-import {
-	CategoriesEnum,
-	WorkbenchTagsEnum,
-	type CardProps,
-	type Categories,
-	type WorkbenchMetadata
-} from './types';
+import { CategoriesEnum, type CardProps, type Categories, type WorkbenchMetadata } from './types';
 import { base } from '$app/paths';
 
 type DateStyle = Intl.DateTimeFormatOptions['dateStyle'];
@@ -17,14 +11,14 @@ export function formatDate(date: string, dateStyle: DateStyle = 'medium', locale
 export const getCategories = (): Categories[] =>
 	Object.values(CategoriesEnum) as unknown as Categories[];
 
-export const getBasePath = (path: string): string =>
+export const createPath = (path: string): string =>
 	`${base}${path.charAt(0) === '/' ? path : `/${path}`}`;
 
 export const workbenchToCards = (data: WorkbenchMetadata[]): CardProps[] => {
 	return data.map<CardProps>((item) => ({
 		description: item.description,
 		img: item.img,
-		path: item.slug,
+		slug: item.slug,
 		title: item.title,
 		tags: item.tags || []
 	}));

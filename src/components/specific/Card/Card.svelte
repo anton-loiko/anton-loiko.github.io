@@ -3,23 +3,23 @@
 	import type { CardProps } from '$lib/types';
 	import Img from '$components/shared/Img.svelte';
 	import TruncText from '$components/shared/TruncText.svelte';
-	import { getBasePath } from '$lib/utils';
+	import { createPath } from '$lib/utils';
 	import Tags from '../Tags/Tags.svelte';
 
 	export let description: CardProps['description'];
 	export let img: CardProps['img'] = ['', 'N/A'];
-	export let path: CardProps['path'];
+	export let slug: CardProps['slug'];
 	export let title: CardProps['title'];
 	export let tags: CardProps['tags'] = [];
 	export let isTwoColumnLayout: boolean = false;
 	export let className: string = '';
 
-	const src = img![0];
-	const alt = img![1];
+	const src = (img || [])![0];
+	const alt = (img || [])![1];
 </script>
 
 <a
-	href={getBasePath(`/workbench/${path}`)}
+	href={createPath(`/workbench/${slug}`)}
 	class={cls(
 		'flex flex-col gap-5 w-full h-auto p-3 pb-4 bg-gray-300 cursor-pointer border border-transparent rounded-lg transition-colors',
 		'hover:border-gray-400',

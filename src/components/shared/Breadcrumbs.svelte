@@ -3,7 +3,7 @@
 	import { base } from '$app/paths';
 	import RightIcon from '$components/icons/Right.svelte';
 	import Container from './Container.svelte';
-	import { getBasePath } from '$lib/utils';
+	import { createPath } from '$lib/utils';
 
 	const getBreadcrumbs = (pathname: string) => {
 		return pathname.split('/').map((breadcrumb, index, arr) => ({
@@ -28,7 +28,7 @@
 
 			<li class="font-lilita uppercase hover:text-white flex-shrink-0">
 				<a
-					href={getBasePath(item.href)}
+					href={createPath(item.href)}
 					class={`block min-w-5 min-h-5 py-1 ${$page.url.pathname === item.href ? 'pointer-events-none text-primary-dark focus:outline-none' : ''}`}
 				>
 					{item.breadcrumb}
