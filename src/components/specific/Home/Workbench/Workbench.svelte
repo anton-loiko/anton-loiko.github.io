@@ -19,7 +19,9 @@
 
 <section class={className}>
 	<h5 bind:this={localRef} class="text-xl text-principal-red text-center pt-5 mb-2">My work</h5>
-	<h3 class="text-2xl text-gray-600 text-center mb-14">Take a look at the featured projects</h3>
+	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-14">
+		Take a look at the featured projects
+	</h2>
 
 	<CardList classes={{ root: 'mb-24' }} {cards} />
 

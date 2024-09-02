@@ -17,7 +17,7 @@
 <div
 	class={cls(
 		'root relative flex flex-col bg-no-repeat bg-contain bg-center px-4 mb-32',
-		'xl:bg-cover lg:pt-48 lg:px-0',
+		'xl:bg-cover md:pt-48 lg:px-0',
 		classes.root
 	)}
 >

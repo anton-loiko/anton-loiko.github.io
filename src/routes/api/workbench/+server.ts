@@ -1,5 +1,6 @@
 import { json } from '@sveltejs/kit';
 import type { WorkbenchMetadata } from '$lib/types';
+import qs from 'querystring';
 
 type Filters = Record<'limit', string>;
 
@@ -31,9 +32,11 @@ async function getWorkbench(filters: Filters) {
 	return posts;
 }
 
-export async function GET({ url }) {
+export async function GET({ request }) {
 	try {
-		const limit = url.searchParams.get('limit') ?? '';
+		const url = request.url.split('?')[1] || '';
+		const parsed = qs.parse(url);
+		const limit = Array.isArray(parsed.limit) ? parsed.limit[0] : parsed.limit || '';
 
 		const workbench = await getWorkbench({ limit });
 
