@@ -4,7 +4,7 @@ description: Latest news on my projects, skills, and professional growth.
 # Date format: 'yyyy-m-dd'
 date: '2024-8-10'
 categories:
-  - my_updates
+  - UPDATES
 published: true
 ---
 
@@ -20,9 +20,9 @@ I'm also continuing to work on my website and blog as part of my project. This s
 
 This blog is not intended for influencer activities. It’s mainly for demonstrating my skills and projects.
 
-The blog operates like a Static Site Generator (SSG) using SvelteKit, they have their own mixed variant. It parses MD files with posts during the build process and generates a list and pages for articles. The parser works with standard remark and rehype plugins, and syntax highlighting is provided by shiki.
+The blog operates like a Server-side rendering (SSR) using SvelteKit. It parses MD files with posts during the build process and generates a list and pages for articles. The parser works with standard remark and rehype plugins, and syntax highlighting is provided by shiki.
 
-You can find more details on GitHub.
+For more details, feel free to visit my [GitHub](https://github.com/anton-loiko/anton-loiko.github.io)
 
 Thank you for your time!
 

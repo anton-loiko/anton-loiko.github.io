@@ -1,6 +1,6 @@
 <script>
-	import Container from '$components/layout/Container.svelte';
-	import PostList from '$components/post/PostList.svelte';
+	import Container from '$components/shared/Container.svelte';
+	import PostList from '$components/specific/post/PostList.svelte';
 
 	export let data;
 </script>
@@ -9,6 +9,6 @@
 	<title>{`AL | Blog | Categories | ${data.category}`}</title>
 </svelte:head>
 
-<Container title={`List of #${data.category}`}>
+<Container title={`List of #${data.category.toLowerCase()}`}>
 	<PostList posts={data.posts} fallbackPath="/blog" fallbackLabel="Browse all posts" />
 </Container>

@@ -7,11 +7,43 @@ import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
 import { getHighlighter } from 'shiki';
 
+import { SKIP, visit } from 'unist-util-visit';
+
+function remarkCustomVideo() {
+	return (tree) => {
+		visit(tree, 'paragraph', (node, index, parent) => {
+			const regex = new RegExp('^({VIMEO::})([^]+)({::END})$', 'g');
+			const firstChild = node.children[0];
+
+			let match = null;
+
+			if (firstChild.type === 'text') {
+				match = regex.exec(firstChild.value);
+			}
+
+			if (match) {
+				// eslint-disable-next-line no-unused-vars
+				const [fullMatch, _, url] = match;
+
+				// Create a new node for video
+				const videoNode = `<Components.vimeo src="${url}" />`;
+
+				// Replace the found text with a new node
+				firstChild.value = firstChild.value.replace(fullMatch, videoNode);
+
+				// Remove the wrapping
+				parent.children.splice(index, 1, firstChild);
+				return [SKIP, index];
+			}
+		});
+	};
+}
+
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
 	layout: {
-		_: './src/mdsvex.svelte'
+		_: './src/components/layouts/MdsvexLayout.svelte'
 	},
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
@@ -24,7 +56,7 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`;
 		}
 	},
-	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	remarkPlugins: [remarkCustomVideo, remarkUnwrapImages, [remarkToc, { tight: true }]],
 	rehypePlugins: [rehypeSlug]
 };
 
@@ -33,7 +65,9 @@ const config = {
 	extensions: ['.svelte', '.md'],
 	kit: {
 		alias: {
-			$components: path.resolve('./src/components')
+			$components: path.resolve('./src/components'),
+			$hooks: path.resolve('./src/hooks'),
+			$stores: path.resolve('./src/stores')
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message, referenceType, status }) => {

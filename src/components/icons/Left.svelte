@@ -3,6 +3,8 @@
 	export let title = '';
 </script>
 
+<!-- https://www.svgrepo.com/collection/mingcute-tiny-bold-line-icons/ -->
+
 <svg
 	width="24px"
 	height="24px"

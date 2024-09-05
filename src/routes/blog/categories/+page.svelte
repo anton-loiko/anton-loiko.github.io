@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { CategoriesEnum, type Categories } from '$lib/types';
-	import Container from '$components/layout/Container.svelte';
-	import CategoryList from '$components/custom/Category/CategoryList.svelte';
+	import Container from '$components/shared/Container.svelte';
+	import Categories from '$components/shared/Category/Categories.svelte';
+	import { getCategories } from '$lib/utils';
 
-	const categories: Categories[] = Object.values(CategoriesEnum);
+	const categories = getCategories();
 </script>
 
 <svelte:head>
@@ -11,5 +11,5 @@
 </svelte:head>
 
 <Container title="Categories">
-	<CategoryList classes={{ category: 'text-2xl' }} {categories} />
+	<Categories classes={{ category: 'text-2xl' }} {categories} />
 </Container>

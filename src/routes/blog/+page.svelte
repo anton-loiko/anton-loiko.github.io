@@ -1,6 +1,6 @@
 <script>
-	import Container from '$components/layout/Container.svelte';
-	import PostList from '$components/post/PostList.svelte';
+	import Container from '$components/shared/Container.svelte';
+	import PostList from '$components/specific/post/PostList.svelte';
 
 	export let data;
 </script>

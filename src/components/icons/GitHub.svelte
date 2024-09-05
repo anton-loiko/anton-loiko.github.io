@@ -1,3 +1,10 @@
+<script>
+	export let className = '';
+	export let title = 'GitHub';
+</script>
+
+<!-- https://www.svgrepo.com/collection/mingcute-tiny-bold-line-icons/ -->
+
 <svg
 	width="20px"
 	height="20px"
@@ -5,8 +12,9 @@
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
+	class={className}
 >
-	<title>GitHub</title>
+	<title>{title}</title>
 	<g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 		<g id="Logo" transform="translate(-144.000000, -96.000000)" fill-rule="nonzero">
 			<g id="github_line" transform="translate(144.000000, 96.000000)">

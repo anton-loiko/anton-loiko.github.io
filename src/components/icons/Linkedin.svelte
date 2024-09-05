@@ -1,3 +1,10 @@
+<script>
+	export let className = '';
+	export let title = 'LinkedIn';
+</script>
+
+<!-- https://www.svgrepo.com/collection/mingcute-tiny-bold-line-icons/ -->
+
 <svg
 	width="24px"
 	height="24px"
@@ -5,8 +12,10 @@
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
+	class={className}
 >
-	<title>LinkedIn</title>
+	<title>{title}</title>
+
 	<g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 		<g id="Brand" transform="translate(-336.000000, -0.000000)" fill-rule="nonzero">
 			<g id="linkedin_line" transform="translate(336.000000, 0.000000)">
