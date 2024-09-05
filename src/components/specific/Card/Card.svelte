@@ -40,7 +40,7 @@
 			<Tags size="xs" variant="light" {tags} />
 		{/if}
 
-		<h3 class={cls('font-bold font-lilita text-gray-600 underline-offset-8', className)}>
+		<h3 class={cls('font-bold font-roboto text-gray-600 underline-offset-8', className)}>
 			{title}
 		</h3>
 
