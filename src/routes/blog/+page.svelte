@@ -18,9 +18,7 @@
 			🚀 I’ll share insights on what I’m currently exploring and creating 🎮
 		</p>
 
-		<p class="font-roboto text-secondary-dark">
-			🎨 Stay tuned for Portfolio and Project demos coming Soon! 🛠️
-		</p>
+		<p class="font-roboto text-secondary-dark">🎨 Stay tuned for more Blog and Workbench 🛠️</p>
 	</div>
 
 	<h2 class="font-lilita text-3xl font-bold mb-4">List of Posts:</h2>

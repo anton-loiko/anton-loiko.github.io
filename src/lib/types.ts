@@ -1,5 +1,6 @@
 export enum CategoriesEnum {
-	'UPDATES' = 'UPDATES'
+	'UPDATES' = 'UPDATES',
+	'DEV_LOGS' = 'DEV_LOGS'
 }
 export enum WorkbenchTagsEnum {
 	'INDEPENDENT' = 'INDEPENDENT',
