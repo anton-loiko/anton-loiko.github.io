@@ -20,6 +20,16 @@
 			alt: 'Git'
 		},
 		{
+			url: 'https://www.docker.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
+			alt: 'Docker'
+		},
+		{
+			url: 'https://go.dev/doc/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/go-colored.svg',
+			alt: 'Go Lang'
+		},
+		{
 			url: 'https://docs.microsoft.com/en-us/cpp/?view=msvc-170',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/cplusplus-colored.svg',
 			alt: 'C++'
@@ -193,11 +203,6 @@
 			url: 'https://www.digitalocean.com',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/digitalocean-colored.svg',
 			alt: 'Digital Ocean'
-		},
-		{
-			url: 'https://www.docker.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
-			alt: 'Docker'
 		},
 		{
 			url: 'https://www.linux.org',
