@@ -8,11 +8,11 @@ categories:
 published: true
 ---
 
+![cover](/images/blog/dev-logs/cover-0.jpg)
+
 ### Table of Contents
 
 ## Intro
-
-![cover](/images/blog/dev-log-0/cover.jpg)
 
 Hello, everyone! This is the first post of my dev log series where I will talk about game development. I will share my progress, what I’ve learned, and concepts of my games.
 
