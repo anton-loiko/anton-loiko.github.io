@@ -1,5 +1,6 @@
 import { CategoriesEnum, type CardProps, type Categories, type WorkbenchMetadata } from './types';
 import { base } from '$app/paths';
+import qs from 'querystring';
 
 type DateStyle = Intl.DateTimeFormatOptions['dateStyle'];
 
@@ -22,4 +23,21 @@ export const workbenchToCards = (data: WorkbenchMetadata[]): CardProps[] => {
 		title: item.title,
 		tags: item.tags || []
 	}));
+};
+
+export const getFilterFromURLBy = (rawUrl: string, key: string) => {
+	try {
+		const url = rawUrl.split('?')[1] || '';
+		const parsed = qs.parse(url);
+
+		if (!parsed[key]) {
+			throw new Error(`${key}: not found`);
+		}
+
+		return Array.isArray(parsed[key]) ? parsed[key][0] : parsed[key] || '';
+	} catch (error) {
+		console.error(error);
+
+		return '';
+	}
 };

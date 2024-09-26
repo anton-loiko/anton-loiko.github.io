@@ -97,3 +97,5 @@ export type HeroTitleOptions = {
 	children?: string | HeroTitleOptions[];
 	icon?: any;
 };
+
+export type PostItemVariant = 'invert' | 'default';

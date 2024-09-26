@@ -1,9 +1,12 @@
 import { json } from '@sveltejs/kit';
 import type { Post } from '$lib/types';
+import { getFilterFromURLBy } from '$lib/utils';
 
-// TODO: If I add more posts, the category filter will need to be moved back to the server side.
-async function getPosts() {
+type Filters = Record<'limit', string>;
+
+async function getPosts(filters: Filters) {
 	let posts: Post[] = [];
+	const limit = parseInt(filters.limit, 10);
 
 	const paths = import.meta.glob('/src/posts/*.md', { eager: true });
 
@@ -22,12 +25,18 @@ async function getPosts() {
 		(first, second) => new Date(second.date).getTime() - new Date(first.date).getTime()
 	);
 
+	if (!isNaN(limit)) {
+		posts = posts.filter((_, idx) => limit > idx);
+	}
+
 	return posts;
 }
 
-export async function GET() {
+export async function GET({ request }) {
 	try {
-		const posts = await getPosts();
+		const limit = getFilterFromURLBy(request.url, 'limit');
+
+		const posts = await getPosts({ limit });
 
 		return json(posts);
 	} catch (error) {
