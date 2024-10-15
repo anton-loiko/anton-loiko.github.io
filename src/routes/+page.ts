@@ -10,11 +10,11 @@ const MAX_POSTS_ON_HOME = 2;
 
 export async function load({ fetch }) {
 	try {
-		const workbenchResponse = await fetch(`/api/workbench?limit=${MAX_WORKBENCH_ON_HOME}`);
+		const workbenchResponse = await fetch(`/api/workbench-limit/${MAX_WORKBENCH_ON_HOME}`);
 		const workbenchData: WorkbenchMetadata[] = await workbenchResponse.json();
 		const cards: CardProps[] = workbenchToCards(workbenchData);
 
-		const postsResponse = await fetch(`/api/posts?limit=${MAX_POSTS_ON_HOME}`);
+		const postsResponse = await fetch(`/api/posts-limit/${MAX_POSTS_ON_HOME}`);
 		const posts: Post[] = await postsResponse.json();
 
 		return { cards, posts };

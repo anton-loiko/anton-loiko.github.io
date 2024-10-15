@@ -39,7 +39,8 @@ export const getFilterFromURLBy = (rawUrl: string, key: string) => {
 		const parsed = qs.parse(url);
 
 		if (!parsed[key]) {
-			throw new Error(`${key}: not found`);
+			console.error(`${key}: not found`);
+			return '';
 		}
 
 		return Array.isArray(parsed[key]) ? parsed[key][0] : parsed[key] || '';
