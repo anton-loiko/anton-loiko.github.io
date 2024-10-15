@@ -9,34 +9,37 @@ import { getHighlighter } from 'shiki';
 
 import { SKIP, visit } from 'unist-util-visit';
 
-function remarkCustomVideo() {
-	return (tree) => {
-		visit(tree, 'paragraph', (node, index, parent) => {
-			const regex = new RegExp('^({VIMEO::})([^]+)({::END})$', 'g');
-			const firstChild = node.children[0];
+const remarkCustomComponent = (tag, componentName) => () => (tree) => {
 
-			let match = null;
+	if (!tag || !componentName) {
+		throw new Error('"tag" and "componentName" are Mandatory')
+	}
 
-			if (firstChild.type === 'text') {
-				match = regex.exec(firstChild.value);
-			}
+	visit(tree, 'paragraph', (node, index, parent) => {
+		const regex = new RegExp(`^({${tag}::})([^]+)({::END})$`, 'g');
+		const firstChild = node.children[0];
 
-			if (match) {
-				// eslint-disable-next-line no-unused-vars
-				const [fullMatch, _, url] = match;
+		let match = null;
 
-				// Create a new node for video
-				const videoNode = `<Components.vimeo src="${url}" />`;
+		if (firstChild.type === 'text') {
+			match = regex.exec(firstChild.value);
+		}
 
-				// Replace the found text with a new node
-				firstChild.value = firstChild.value.replace(fullMatch, videoNode);
+		if (match) {
+			// eslint-disable-next-line no-unused-vars
+			const [fullMatch, _, url] = match;
 
-				// Remove the wrapping
-				parent.children.splice(index, 1, firstChild);
-				return [SKIP, index];
-			}
-		});
-	};
+			// Create a new node for video
+			const videoNode = `<Components.${componentName} src="${url}" />`;
+
+			// Replace the found text with a new node
+			firstChild.value = firstChild.value.replace(fullMatch, videoNode);
+
+			// Remove the wrapping
+			parent.children.splice(index, 1, firstChild);
+			return [SKIP, index];
+		}
+	});
 }
 
 /** @type {import('mdsvex').MdsvexOptions} */
@@ -56,7 +59,12 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`;
 		}
 	},
-	remarkPlugins: [remarkCustomVideo, remarkUnwrapImages, [remarkToc, { tight: true }]],
+	remarkPlugins: [
+		remarkCustomComponent("VIMEO", "vimeo"),
+		remarkCustomComponent("GAME", "game"),
+		remarkUnwrapImages,
+		[remarkToc, { tight: true }]
+	],
 	rehypePlugins: [rehypeSlug]
 };
 
