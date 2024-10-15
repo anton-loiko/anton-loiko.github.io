@@ -1,12 +1,20 @@
 import { CategoriesEnum, type CardProps, type Categories, type WorkbenchMetadata } from './types';
 import { base } from '$app/paths';
 import qs from 'querystring';
+import { format, parse} from 'date-fns';
+import { enCA } from 'date-fns/locale'
 
-type DateStyle = Intl.DateTimeFormatOptions['dateStyle'];
 
-export function formatDate(date: string, dateStyle: DateStyle = 'medium', locales = 'en') {
-	const formatter = new Intl.DateTimeFormat(locales, { dateStyle });
-	return formatter.format(new Date(date));
+export function formatDate(date: string, dateStyle: string = 'PP', locale = enCA) {
+try {
+	const parsedDate = parse(date, 'yyyy-MM-dd', new Date())
+
+	return format(parsedDate, dateStyle, { locale });
+} catch (error) {
+	console.error(error)
+	
+	return format(new Date(), dateStyle, { locale })
+}
 }
 
 export const getCategories = (): Categories[] =>

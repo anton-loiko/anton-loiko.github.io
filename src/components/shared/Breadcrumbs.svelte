@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { base } from '$app/paths';
 	import RightIcon from '$components/icons/Right.svelte';
 	import Container from './Container.svelte';
 	import { createPath } from '$lib/utils';
+	import cls from 'classnames';
 
 	const getBreadcrumbs = (pathname: string) => {
 		return pathname.split('/').map((breadcrumb, index, arr) => ({
@@ -26,10 +26,13 @@
 				<li class="text-primary-dark"><RightIcon /></li>
 			{/if}
 
-			<li class="font-lilita uppercase hover:text-white flex-shrink-0">
+			<li class="font-lilita uppercase hover:text-white">
 				<a
 					href={createPath(item.href)}
-					class={`block min-w-5 min-h-5 py-1 ${$page.url.pathname === item.href ? 'pointer-events-none text-primary-dark focus:outline-none' : ''}`}
+					class={cls('block min-w-5 min-h-5 py-1 flex-shrink-0', {
+						'pointer-events-none text-primary-dark focus:outline-none':
+							$page.url.pathname === item.href
+					})}
 				>
 					{item.breadcrumb}
 				</a>
