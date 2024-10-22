@@ -19,22 +19,21 @@
 	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About me</h2>
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
-		As a Senior Frontend Engineer and Fullstack Developer, I bring over 6 years of experience in
-		crafting dynamic and responsive user interfaces. My passion lies in UI/UX design, where I merge
-		creativity with technical prowess to build engaging, user-friendly applications.
+		As a Senior Frontend Engineer and Fullstack Developer, I bring over 7 years of experience in
+		crafting dynamic and responsive user interfaces. My focus is on UI/UX design, where I merge
+		creativity with technical expertise to build engaging, user-friendly applications.
 	</p>
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
-		Currently, I am deeply immersed in C++ and Unreal Engine, exploring the intricate world of game
-		development and UI programming. My journey in tech has been driven by a relentless curiosity and
-		a commitment to continuous learning, which has led me to work on diverse projects from mobile
-		apps to complex web systems.
+		Currently, I am deeply immersed in GoLang for backend development, exploring efficient
+		microservices and scalable application architecture. My journey in tech has been driven by a
+		relentless curiosity and a commitment to continuous learning, which has led me to work on
+		diverse projects, from simple SPA apps to complex web systems.
 	</p>
 
 	<p class="font-roboto text-white mb-4 text-sm md:text-base">
-		I'm excited about opportunities that allow me to leverage my skills in frontend and fullstack
-		development, while also diving deeper into the realm of game development. Let's connect if
-		you're looking for someone who is not only technically adept but also passionate about creating
-		exceptional user experiences.
+		I strive to contribute to UI/UX design by leveraging my skills to create intuitive and effective
+		user interfaces. Let's connect if you're looking for someone who is not only technically adept
+		but also passionate about creating exceptional user experiences.
 	</p>
 </div>
