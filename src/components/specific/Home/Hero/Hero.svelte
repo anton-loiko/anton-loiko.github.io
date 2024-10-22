@@ -37,10 +37,10 @@
 			{
 				tag: 'div',
 				icon: HeroIcon,
-				children: 'Senior Fullstack Engineer',
+				children: 'Senior Frontend Engineer',
 				attrs: {
 					class: iconWrapper,
-					iconProps: { variant: 'terminal', className: cls('text-principal-purple', iconSize) }
+					iconProps: { variant: 'palette', className: cls('text-principal-purple', iconSize) }
 				}
 			},
 			divider,
@@ -57,10 +57,10 @@
 			{
 				tag: 'div',
 				icon: HeroIcon,
-				children: 'Game Engine Enthusiast',
+				children: 'Fullstack Engineer',
 				attrs: {
 					class: iconWrapper,
-					iconProps: { variant: 'gamepad', className: cls('text-principal-blue', iconSize) }
+					iconProps: { variant: 'terminal', className: cls('text-principal-blue', iconSize) }
 				}
 			}
 		],
@@ -68,7 +68,7 @@
 	};
 
 	const defaultDescription =
-		'UI development is my forte, and I love the creative process of blending technology and design to build engaging interfaces.';
+		'A developer driven by curiosity, blending performance optimization with innovative design';
 	const defaultAvatar = '/images/avatar.jpeg';
 
 	export let subtitle: HeroTitleOptions = defaultSubtitle;

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BatteryCharging from '$components/icons/BatteryCharging.svelte';
 	import Gamepad from '$components/icons/Gamepad.svelte';
+	import Palette from '$components/icons/Palette.svelte';
 	import TerminalBox from '$components/icons/TerminalBox.svelte';
 	import type { HeroIconVariant } from '$lib/types';
 
@@ -13,7 +14,8 @@
 	>([
 		['gamepad', Gamepad],
 		['terminal', TerminalBox],
-		['battery', BatteryCharging]
+		['battery', BatteryCharging],
+		['palette', Palette]
 	]);
 </script>
 

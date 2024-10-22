@@ -8,7 +8,10 @@
 </script>
 
 <a
-	class={cls('inline-flex items-center flex-shrink-0 p-1 rounded-md bg-gray-50', classes.root)}
+	class={cls(
+		'inline-flex items-center flex-shrink-0 p-1 rounded-md bg-gray-50 hover:bg-opacity-90',
+		classes.root
+	)}
 	href={url}
 	target="_blank"
 	rel="noreferrer"

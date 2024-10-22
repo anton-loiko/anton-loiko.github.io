@@ -5,6 +5,11 @@
 
 	const skills = [
 		{
+			url: 'https://git-scm.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg',
+			alt: 'Git'
+		},
+		{
 			url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
 			alt: 'JavaScript'
@@ -15,69 +20,9 @@
 			alt: 'TypeScript'
 		},
 		{
-			url: 'https://git-scm.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg',
-			alt: 'Git'
-		},
-		{
-			url: 'https://www.docker.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
-			alt: 'Docker'
-		},
-		{
-			url: 'https://go.dev/doc/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/go-colored.svg',
-			alt: 'Go Lang'
-		},
-		{
-			url: 'https://docs.microsoft.com/en-us/cpp/?view=msvc-170',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/cplusplus-colored.svg',
-			alt: 'C++'
-		},
-		{
-			url: 'https://dart.dev/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/dart-colored.svg',
-			alt: 'Dart'
-		},
-		{
-			url: 'https://code.visualstudio.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode.svg',
-			alt: 'VS Code'
-		},
-		{
 			url: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg',
 			alt: 'HTML5'
-		},
-		{
-			url: 'https://reactjs.org/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg',
-			alt: 'React'
-		},
-		{
-			url: 'https://nextjs.org/docs',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg',
-			alt: 'NextJs'
-		},
-		{
-			url: 'https://vuejs.org/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg',
-			alt: 'Vue'
-		},
-		{
-			url: 'https://nuxtjs.org/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nuxtjs-colored.svg',
-			alt: 'Nuxtjs'
-		},
-		{
-			url: 'https://www.gatsbyjs.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/gatsby-colored.svg',
-			alt: 'Gatsby'
-		},
-		{
-			url: 'https://angular.io/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg',
-			alt: 'Angular'
 		},
 		{
 			url: 'https://www.w3.org/TR/CSS/#css',
@@ -85,19 +30,9 @@
 			alt: 'CSS3'
 		},
 		{
-			url: 'https://sass-lang.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg',
-			alt: 'Sass'
-		},
-		{
-			url: 'https://tailwindcss.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg',
-			alt: 'TailwindCSS'
-		},
-		{
-			url: 'https://mui.com/"',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/materialui-colored.svg',
-			alt: 'Material UI'
+			url: 'https://reactjs.org/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg',
+			alt: 'React'
 		},
 		{
 			url: 'https://redux.js.org/',
@@ -115,19 +50,19 @@
 			alt: 'Babel'
 		},
 		{
-			url: 'https://svelte.dev/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/svelte-colored.svg',
-			alt: 'Svelte'
+			url: 'https://sass-lang.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg',
+			alt: 'Sass'
 		},
 		{
-			url: 'https://vitejs.dev/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg',
-			alt: 'Vite'
+			url: 'https://tailwindcss.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg',
+			alt: 'TailwindCSS'
 		},
 		{
-			url: 'https://jquery.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/jquery-colored.svg',
-			alt: 'JQuery'
+			url: 'https://mui.com/"',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/materialui-colored.svg',
+			alt: 'Material UI'
 		},
 		{
 			url: 'https://chakra-ui.com/',
@@ -135,14 +70,9 @@
 			alt: 'Chakra UI'
 		},
 		{
-			url: 'https://getbootstrap.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg',
-			alt: 'Bootstrap'
-		},
-		{
-			url: 'https://www.postgresql.org/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg',
-			alt: 'PostgreSQL'
+			url: 'https://nextjs.org/docs',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nextjs-colored.svg',
+			alt: 'NextJs'
 		},
 		{
 			url: 'https://nodejs.org/en',
@@ -160,14 +90,24 @@
 			alt: 'GraphQL'
 		},
 		{
+			url: 'https://www.docker.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
+			alt: 'Docker'
+		},
+		{
+			url: 'https://go.dev/doc/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/go-colored.svg',
+			alt: 'Go Lang'
+		},
+		{
 			url: 'https://www.mongodb.com/',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg',
 			alt: 'MongoDB'
 		},
 		{
-			url: 'https://www.figma.com/',
-			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg',
-			alt: 'Figma'
+			url: 'https://www.postgresql.org/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg',
+			alt: 'PostgreSQL'
 		},
 		{
 			url: 'https://metamask.io/',
@@ -187,41 +127,119 @@
 		{
 			url: 'https://cloud.google.com/',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/googlecloud-colored.svg',
-			alt: 'Google Cloud'
+			alt: 'Google Cloud',
+			hidden: true
 		},
 		{
 			url: 'https://flutter.dev/',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/flutter-colored.svg',
-			alt: 'Flutter'
+			alt: 'Flutter',
+			hidden: true
 		},
 		{
 			url: 'https://dotnet.microsoft.com/en-us/',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/dot-net-colored.svg',
-			alt: '.NET'
+			alt: '.NET',
+			hidden: true
 		},
 		{
 			url: 'https://www.digitalocean.com',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/digitalocean-colored.svg',
-			alt: 'Digital Ocean'
+			alt: 'Digital Ocean',
+			hidden: true
 		},
 		{
 			url: 'https://www.linux.org',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/linux-colored.svg',
-			alt: 'Linux'
+			alt: 'Linux',
+			hidden: true
 		},
 		{
 			url: 'https://apple.com',
 			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/macos-colored.svg',
-			alt: 'MacOS'
+			alt: 'MacOS',
+			hidden: true
+		},
+		{
+			url: 'https://vuejs.org/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg',
+			alt: 'Vue',
+			hidden: true
+		},
+		{
+			url: 'https://nuxtjs.org/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nuxtjs-colored.svg',
+			alt: 'Nuxtjs',
+			hidden: true
+		},
+		{
+			url: 'https://www.gatsbyjs.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/gatsby-colored.svg',
+			alt: 'Gatsby',
+			hidden: true
+		},
+		{
+			url: 'https://angular.io/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg',
+			alt: 'Angular',
+			hidden: true
+		},
+		{
+			url: 'https://www.figma.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg',
+			alt: 'Figma',
+			hidden: true
+		},
+		{
+			url: 'https://svelte.dev/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/svelte-colored.svg',
+			alt: 'Svelte',
+			hidden: true
+		},
+		{
+			url: 'https://vitejs.dev/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg',
+			alt: 'Vite',
+			hidden: true
+		},
+		{
+			url: 'https://jquery.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/jquery-colored.svg',
+			alt: 'JQuery',
+			hidden: true
+		},
+		{
+			url: 'https://getbootstrap.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg',
+			alt: 'Bootstrap',
+			hidden: true
+		},
+		{
+			url: 'https://docs.microsoft.com/en-us/cpp/?view=msvc-170',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/cplusplus-colored.svg',
+			alt: 'C++',
+			hidden: true
+		},
+		{
+			url: 'https://dart.dev/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/dart-colored.svg',
+			alt: 'Dart',
+			hidden: true
+		},
+		{
+			url: 'https://code.visualstudio.com/',
+			src: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode.svg',
+			alt: 'VS Code',
+			hidden: true
 		}
-	];
+	].filter(({ hidden }) => !hidden);
 </script>
 
 <section class={className}>
 	<h4 class="text-center text-xl text-principal-red mb-3">A bit</h4>
 	<h2 class="text-center text-4xl text-gray-600 font-lilita mb-8">About skills</h2>
 
-	<div class="flex justify-start flex-wrap items-center gap-3">
+	<div class="max-w-md mx-auto flex justify-start flex-wrap items-center gap-3">
 		{#each skills as skill}
 			<SkillsItem {...skill} />
 		{/each}
