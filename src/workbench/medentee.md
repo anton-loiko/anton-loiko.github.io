@@ -1,6 +1,6 @@
 ---
 title: Medentee Limited
-description: Mid-Senior Software Engineer | Front-end at Medentee Limited
+description: 'Senior Frontend Engineer'
 # Date format: 'yyyy-m-dd'
 date: '2024-8-29'
 img:

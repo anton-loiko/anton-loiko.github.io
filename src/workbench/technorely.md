@@ -1,6 +1,6 @@
 ---
 title: Technorely Inc.
-description: Mid Software Engineer | Front-end at Technorely Limited
+description: 'Software Engineer II, Full Stack, Frontend'
 # Date format: 'yyyy-m-dd'
 date: '2024-8-29'
 img:
