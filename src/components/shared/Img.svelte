@@ -11,7 +11,7 @@
 	{alt}
 	loading="lazy"
 	class={cls(
-		'relative w-full h-full rounded',
+		'relative w-auto h-full max-h-[600px] rounded mx-auto',
 		"before:absolute before:content-['Trick_for_crashed_image'] before:text-center before:min-h-16 before:pt-10 before:text-black before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-principal-purple before:h-full before:w-full before:rounded",
 		className
 	)}

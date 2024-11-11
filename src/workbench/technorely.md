@@ -20,7 +20,7 @@ published: true
 
 Technorely's portfolio - [Case studies](https://technorely.com/portfolio/case-studies)
 
-![Medentee](/images/technorely.jpg)
+![Technorely](/images/technorely.jpg)
 
 **Sept. 2018 - Feb. 2021 | Vancouver, BC, Canada · Remote**
 
